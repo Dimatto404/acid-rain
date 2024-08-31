@@ -4,137 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimatto404: Proyecto 2: Boostrap</title>
+    <title>Dimatto404: Proyecto 3: HTML Forms</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-    <header class="container-fluid d-flex justify-content-between bg-light navbar navbar-light">
-        <div class="d-flex align-items-center">
-            <i class="fa-brands fa-instagram m-1"></i>
-            <h5>Instagram</h5>
-        </div>
-        <div class="d-flex">
-            <button class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#modal">Create a new
-                post</button>
-            <button class="dropdown-toggle btn btn-secondary m-2" data-bs-toggle="dropdown" id="dropdown"><i
-                    class="fa-solid fa-gear"></i></button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Accesibility</a></li>
-                <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-                <hr class="dropdown-divider">
-                <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="d-flex justify-content-center my-5">
+        <form action="#" method="get" class="col-11">
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3>Payment form example</h3>
                 </div>
-                <div class="modal-body">
-                    <h6>Caption:</h6>
-                    <textarea class="form-control" placeholder="Add the caption of your post here"
-                        id="floatingTextarea2"></textarea>
-                    <div class="row p-2">
-                        <button class="col-1 border rounded p-1 m-1 btn-light">
-                            <i class="fa-solid fa-camera"></i>
-                        </button>
-                        <button class="col-1 border rounded p-1 m-1 btn-light">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </button>
+                <div>
+                    <div class="alert alert-danger m-3">Some fields are missing</div>
+                    <div class="d-flex px-3">
+                        <fieldset class="col-5 p-1">
+                            <label for="">Card #</label><br>
+                            <input class="form-control" type="text" placeholder="XXXXXXXXXXXXXXXX" required>
+                        </fieldset>
+                        <fieldset class="col-3 p-1">
+                            <label for="">CVC #</label><br>
+                            <input class="form-control" type="number" placeholder="0000" required>
+                        </fieldset>
+                        <fieldset class="col-4 p-1">
+                            <label for="">Amount</label>
+                            <div class="d-flex">
+                                <strong>$</strong>
+                                <input class="form-control" type="number" placeholder="Amount" required>
+                            </div>
+                        </fieldset>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Publish</button>
+                <div class="d-flex px-3">
+                    <div class="col-6">
+                        <fieldset class="p-1">
+                            <label for="">First Name</label><br>
+                            <input class="form-control" type="text" required>
+                        </fieldset>
+                        <fieldset class="p-1">
+                            <label for="">City</label><br>
+                            <input class="form-control" type="text" required>
+                        </fieldset>
+                        <fieldset class="p-1">
+                            <label for="">We accept:</label><br>
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" checked id="blue" name="options" type="radio">
+                                    <i class="fab fa-cc-mastercard"></i>
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" id="red" name="options" type="radio">
+                                    <i class="fab fa-cc-visa"></i>
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" name="options" type="radio">
+                                    <i class="fab fa-cc-diners-club"></i>
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" name="options" type="radio">
+                                    <i class="fab fa-cc-amex"></i>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-6">
+                        <fieldset class="p-1">
+                            <label for="">Last Name</label><br>
+                            <input class="form-control" type="text" required>
+                        </fieldset>
+                        <div class="d-flex">
+                            <fieldset class="col-6 p-1">
+                                <label for="state">State</label><br>
+                                <select class="form-control" name="state" id="state">
+                                    <option value="">Pick a state</option>
+                                </select>
+                            </fieldset>
+                            <fieldset class="col-6 p-1">
+                                <label for="">Postal Code</label><br>
+                                <input class="form-control" type="text" required>
+                            </fieldset>
+                        </div>
+                        <fieldset class="p-1">
+                            <label for="">Message</label><br>
+                            <textarea class="form-control" name="" id=""></textarea>
+                            <small class="text-muted">Add any notes here.</small>
+                        </fieldset>
+                    </div>
+                </div>
+                <div id="footer" class="d-flex justify-content-end card-footer mt-4">
+                    <button type="reset" class="btn btn-secondary m-2">Cancel</button>
+                    <button class="btn btn-primary m-2">Send</button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
-
-    <div class="container-fluid p-2">
-        <ul class="nav nav-pill justify-content-center" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-                    role="tab" aria-controls="home" aria-selected="true"><i class="fa-solid fa-table-cells"></i></a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-                    role="tab" aria-controls="profile" aria-selected="false"><i class="fa-solid fa-square"></i></a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade overflow-hidden" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <article class="col-6 mx-auto border rounded p-0 my-5">
-                    <div class="d-flex justify-content-between m-2">
-                        <h3>Industrial Batching</h3>
-                        <p>08/26</p>
-                    </div>
-                    <img src="imgs/StockCake-Automated warehouse interior_1724883554.jpg" alt="post1">
-                    <br>
-                    <strong class="m-2">204 Likes</strong>
-                    <p class="m-2">This is an example of a very good photo that you can post on instagram</p>
-                </article>
-                <article class="col-6 mx-auto border rounded p-0 my-5">
-                    <div class="d-flex justify-content-between m-2">
-                        <h3>Sickest Riffs</h3>
-                        <p>04/09</p>
-                    </div>
-                    <img src="imgs/StockCake-Electric Guitar Energy_1724883475.jpg" alt="post2"> <br>
-                    <strong class="m-2">26985 Likes</strong>
-                    <p class="m-2">This is an example of a very good photo that you can post on instagram</p>
-                </article>
-                <article class="col-6 mx-auto border rounded p-0 my-5">
-                    <div class="d-flex justify-content-between m-2">
-                        <h3>Fiery Passions</h3>
-                        <p>06/10</p>
-                    </div>
-                    <img class="imgSp" src="imgs/StockCake-Fiery sunset forge_1724883460.jpg" alt="post3"> <br>
-                    <strong class="m-2">204 Likes</strong>
-                    <p class="m-2">This is an example of a very good photo that you can post on instagram</p>
-                </article>
-            </div>
-
-            <div class="tab-pane fade show active overflow-hidden" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 g-1"><img
-                                src="imgs/StockCake-Automated warehouse interior_1724883554.jpg" alt="1"></div>
-                        <div class="col-md-6 col-lg-4 g-1"><img src="imgs/StockCake-Dog enjoying sunset_1724883538.jpg"
-                                alt="2"></div>
-                        <div class="col-md-6 col-lg-4 g-1"><img
-                                src="imgs/StockCake-Electric Guitar Energy_1724883475.jpg" alt="3"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 g-1"><img src="imgs/StockCake-Fiery sunset forge_1724883460.jpg"
-                                alt="4"></div>
-                        <div class="col-md-6 col-lg-4 g-1"><img src="imgs/StockCake-Lush Indoor Garden_1724883444.jpg"
-                                alt="5"></div>
-                        <div class="col-md-6 col-lg-4 g-1"><img
-                                src="imgs/StockCake-Monochrome Cityscape Art_1724883406.jpg" alt="6"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 g-1"><img src="imgs/StockCake-Porous Rock Texture_1724883419.jpg"
-                                alt="7"></div>
-                        <div class="col-md-6 col-lg-4 g-1"><img
-                                src="imgs/StockCake-Underwater Cityscape Fantasy_1724883395.jpg" alt="8"></div>
-                        <div class="col-md-6 col-lg-4 g-1"><img src="imgs/StockCake-Wall of memories_1724883575.jpg"
-                                alt="9"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 </body>
 
